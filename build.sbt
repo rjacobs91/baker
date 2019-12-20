@@ -11,8 +11,6 @@ val commonSettings = Defaults.coreDefaultSettings ++ Seq(
   testOptions += Tests.Argument(TestFrameworks.JUnit, "-v"),
   javacOptions := Seq("-source", jvmV, "-target", jvmV),
   scalacOptions := Seq(
-    "-unchecked",
-    "-deprecation",
     "-feature",
     "-Ywarn-dead-code",
     "-language:higherKinds",
@@ -20,8 +18,7 @@ val commonSettings = Defaults.coreDefaultSettings ++ Seq(
     "-language:implicitConversions",
     "-language:postfixOps",
     "-encoding", "utf8",
-    s"-target:jvm-$jvmV",
-    "-Xfatal-warnings"
+    s"-target:jvm-$jvmV"
   ),
   coverageExcludedPackages := "<empty>;.*.javadsl;.*.scaladsl;.*.common;.*.protobuf",
   packageOptions in (Compile, packageBin) +=
